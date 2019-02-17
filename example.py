@@ -1,6 +1,6 @@
 from instagram_web_api import Client, ClientCompatPatch, ClientError, ClientLoginError
-
 from sightengine.client import SightengineClient
+
 client = SightengineClient('630881392', 'St5TPUomwvLYq7eiXd4G')
 web_api = Client(auto_patch=True, drop_incompat_keys=False)
 user_feed_info = web_api.user_feed('232192182')
