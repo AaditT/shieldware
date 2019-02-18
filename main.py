@@ -1,6 +1,7 @@
 from instagram_web_api import Client, ClientCompatPatch, ClientError, ClientLoginError
 from sightengine.client import SightengineClient
 from flask import *
+
 client = SightengineClient('630881392', 'St5TPUomwvLYq7eiXd4G')
 web_api = Client(auto_patch=True, drop_incompat_keys=False)
 
@@ -46,7 +47,6 @@ def graph(id):
         alcohol_vals.append(checkAlcohol(_url))
     x_vals=gen_list(x)
     return render_template('ig_graph.html', x_vals=x_vals, drug_vals=drug_vals,weapon_vals=weapon_vals,alcohol_vals=alcohol_vals)
-
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0',port=5000)
