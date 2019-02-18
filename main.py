@@ -45,7 +45,7 @@ def graph(id):
         weapon_vals.append(checkWeapons(_url))
         alcohol_vals.append(checkAlcohol(_url))
     x_vals=gen_list(x)
-    return render_template('graph.html', x_vals=x_vals, drug_vals=drug_vals,weapon_vals=weapon_vals,alcohol_vals=alcohol_vals)
+    return render_template('ig_graph.html', x_vals=x_vals, drug_vals=drug_vals,weapon_vals=weapon_vals,alcohol_vals=alcohol_vals)
 
 
 if __name__ == '__main__':
