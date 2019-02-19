@@ -5,6 +5,8 @@ import tweepy #https://github.com/tweepy/tweepy
 import csv
 import sys
 
+from creds import consumer_key, consumer_secret, access_key, access_secret
+
 #Twitter API credentials
 
 consumer_key = "08YUWBp8lF6AkuDSOPp71LrgY"
