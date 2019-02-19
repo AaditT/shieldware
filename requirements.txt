@@ -3,3 +3,5 @@ gunicorn
 instagram_web_api
 sightengine
 flask
+future
+python-twitter
