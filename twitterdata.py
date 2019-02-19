@@ -32,8 +32,7 @@ def get_tweets(api=None, screen_name=None):
         })
     return results
 
-if __name__ == "__main__":
-    screen_name = sys.argv[1]
-    print(screen_name)
-    printer = pprint.PrettyPrinter(indent=4)
-    printer.pprint(get_tweets(api=api, screen_name=screen_name))
+screen_name = "TheRock"
+print(screen_name)
+printer = pprint.PrettyPrinter(indent=4)
+printer.pprint(get_tweets(api=api, screen_name=screen_name))
