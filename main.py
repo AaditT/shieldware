@@ -30,7 +30,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET','POST'])
 def home():
-    return render_template('index.html')
+    return render_template('home.html')
 
 @app.route('/ig/<id>')
 def graph(id):
