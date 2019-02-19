@@ -1,37 +1,40 @@
-from __future__ import print_function
-import twitter
-api = twitter.Api('08YUWBp8lF6AkuDSOPp71LrgY', 's1CbY5gqTMsBYrV5jpkgVivjIqfK05wmLVpa44otvziMsgnNhp', '1097354523432017920-mWlifS3sup5mWhZLBXXQKuIJ186rSn', 'Ad6z0qJPxDMr8rHIJGioJLUxofUTLEML6qva3R8Ip87BK')
+#!/usr/bin/env python
+# encoding: utf-8
 
-import json
+import tweepy #https://github.com/tweepy/tweepy
+import csv
 import sys
-import pprint
-import html
 
-def get_tweets(api=None, screen_name=None):
-    timeline = api.GetUserTimeline(screen_name=screen_name, count=200)
-    earliest_tweet = min(timeline, key=lambda x: x.id).id
-    print("getting tweets before:", earliest_tweet)
+#Twitter API credentials
 
-    while True:
-        tweets = api.GetUserTimeline(
-            screen_name=screen_name, max_id=earliest_tweet, count=200
-        )
-        new_earliest = min(tweets, key=lambda x: x.id).id
+consumer_key = "08YUWBp8lF6AkuDSOPp71LrgY"
+consumer_secret = "s1CbY5gqTMsBYrV5jpkgVivjIqfK05wmLVpa44otvziMsgnNhp"
+access_key = "1097354523432017920-mWlifS3sup5mWhZLBXXQKuIJ186rSn"
+access_secret = "Ad6z0qJPxDMr8rHIJGioJLUxofUTLEML6qva3R8Ip87BK"
 
-        if not tweets or new_earliest == earliest_tweet:
-            break
+
+def get_all_tweets(screen_name):
+    auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+    auth.set_access_token(access_key, access_secret)
+    api = tweepy.API(auth)
+    alltweets = []
+    new_tweets = api.user_timeline(screen_name = screen_name,count=1)
+    alltweets.extend(new_tweets)
+    oldest = alltweets[-1].id - 1
+
+    while len(new_tweets) > 0:
+        new_tweets = api.user_timeline(screen_name = screen_name,count=200,max_id=oldest)
+        alltweets.extend(new_tweets)
+        oldest = alltweets[-1].id - 1
+
+    outtweets = []
+
+    for tweet in alltweets:
+        try:
+            print tweet.entities['media'][0]['media_url']
+        except (NameError, KeyError):
+            pass
         else:
-            earliest_tweet = new_earliest
-            print("getting tweets before:", earliest_tweet)
-            timeline += tweets
-    results = []
-    for tweet in timeline:
-        results.append({
-            "time" : html.unescape(json.dumps(tweet._json["created_at"], indent=4, sort_keys=True)),
-            "text" : html.unescape(json.dumps(tweet._json["text"], indent=4, sort_keys=True)),
-        })
-    return results
+            outtweets.append(str(tweet.entities['media'][0]['media_url']))
 
-
-printer = pprint.PrettyPrinter(indent=4)
-printer.pprint(get_tweets(api=api, screen_name=screen_name))
+    return outtweets

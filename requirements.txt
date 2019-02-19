@@ -5,3 +5,5 @@ sightengine
 flask
 future
 python-twitter
+PySocks
+tweepy
