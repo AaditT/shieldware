@@ -1,3 +1,5 @@
+# https://gist.github.com/freimanas/39f3ad9a5f0249c0dc64#file-tweet_image_dumper-py
+
 import tweepy
 import csv
 import sys
