@@ -17,21 +17,21 @@ def checkDrugs(output_list):
         print(output)
         drugs = output['drugs']
         my_drug_list.append(drugs)
-    return my_drug_list
+    return [x*10 for x in my_drug_list]
 
 def checkWeapons(output_list):
     my_weapon_list = []
     for output in output_list:
         weapons = output['weapon']
         my_weapon_list.append(weapons)
-    return my_weapon_list
+    return [x*10 for x in my_weapon_list]
 
 def checkAlcohol(output_list):
     my_alcohol_list = []
     for output in output_list:
         alcohol = output['alcohol']
         my_alcohol_list.append(alcohol)
-    return my_alcohol_list
+    return [x*10 for x in my_alcohol_list]
 
 def gen_list(count):
     my_list = []

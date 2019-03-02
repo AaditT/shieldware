@@ -10,6 +10,7 @@ def get_all_igposts(id):
     user_feed_info = web_api.user_feed(id)
     pp.pprint(user_feed_info)
     for post in user_feed_info:
+        pp.pprint(post['node']['display_url'])
         _url = post['node']['display_url']
-    posts.append(_url)
-    return posts
+        posts.append(_url)
+    return posts[:6]
