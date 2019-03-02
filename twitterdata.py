@@ -15,7 +15,7 @@ def get_all_tweets(screen_name):
     alltweets.extend(new_tweets)
     oldest = alltweets[-1].id - 1
 
-    while len(new_tweets) > 0:
+    while len(new_tweets) > 0 and len(new_tweets) < 5:
         new_tweets = api.user_timeline(screen_name = screen_name,count=200,max_id=oldest)
         alltweets.extend(new_tweets)
         oldest = alltweets[-1].id - 1
@@ -24,7 +24,7 @@ def get_all_tweets(screen_name):
 
     for tweet in alltweets:
         try:
-            print tweet.entities['media'][0]['media_url']
+            print (tweet.entities['media'][0]['media_url'])
         except (NameError, KeyError):
             pass
         else:

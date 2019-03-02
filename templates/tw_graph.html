@@ -1,1 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Graph</title>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js'></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <style>
+    h1 {
+      font: 50px arial, sans-serif;
+    };
+    </style>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.carousel');
+        var instances = M.Carousel.init(elems, options);
+      });
+  </script>
+</head>
+<body>
+  <center>
+    <h1>{{name}}</h1>
+    <canvas id="chart" width="200" height="200"></canvas>
+    <script>
+      // bar chart data
+      var barData = {
+        labels : [
+          {% for val in x_vals %}
+            "{{ val }}",
+          {% endfor %}
+        ],
+        datasets : [{
+          fillColor: "rgba(140,224,255,0.2)",
+          strokeColor: "rgba(140,224,255,1)",
+          pointColor: "rgba(140,224,255,1)",
+          pointStrokeColor: "#fff",
+          pointHighlightFill: "#fff",
+          pointHighlightStroke: "rgba(151,187,205,1)",
+          bezierCurve : true,
+          data : [
+	    {% for drug_val in drug_vals %}
+              {{ drug_val }},
+            {% endfor %}]
+          }
+        ]
+      }
+      var mychart = document.getElementById("chart").getContext("2d");
+      steps = 1
+      max = 1
+      // draw bar chart
+      var LineChartDemo = new Chart(mychart).Line(barData, {
+        scaleOverride: true,
+        scaleSteps: steps,
+        scaleStepWidth: Math.ceil(max / steps),
+        scaleStartValue: 0,
+        scaleShowVerticalLines: true,
+        scaleShowGridLines : true,
+        barShowStroke : true,
+        scaleShowLabels: true,
+        bezierCurve: false,
+      });
+    </script>
 
+<canvas id="chart2" width="200" height="200"></canvas>
+<script>
+  // bar chart data
+  var barData = {
+    labels : [
+      {% for val in x_vals %}
+        "{{ val }}",
+      {% endfor %}
+    ],
+    datasets : [{
+      fillColor: "rgba(140,224,255,0.2)",
+      strokeColor: "rgba(140,224,255,1)",
+      pointColor: "rgba(140,224,255,1)",
+      pointStrokeColor: "#fff",
+      pointHighlightFill: "#fff",
+      pointHighlightStroke: "rgba(151,187,205,1)",
+      bezierCurve : true,
+      data : [
+  {% for weapon_val in weapon_vals %}
+          {{ weapon_val }},
+        {% endfor %}]
+      }
+    ]
+  }
+  var mychart = document.getElementById("chart2").getContext("2d");
+  steps = 1
+  max = 1
+  // draw bar chart
+  var LineChartDemo = new Chart(mychart).Line(barData, {
+    scaleOverride: true,
+    scaleSteps: steps,
+    scaleStepWidth: Math.ceil(max / steps),
+    scaleStartValue: 0,
+    scaleShowVerticalLines: true,
+    scaleShowGridLines : true,
+    barShowStroke : true,
+    scaleShowLabels: true,
+    bezierCurve: false,
+  });
+</script>
+
+<canvas id="chart3" width="200" height="200"></canvas>
+<script>
+  // bar chart data
+  var barData = {
+    labels : [
+      {% for val in x_vals %}
+        "{{ val }}",
+      {% endfor %}
+    ],
+    datasets : [{
+      fillColor: "rgba(140,224,255,0.2)",
+      strokeColor: "rgba(140,224,255,1)",
+      pointColor: "rgba(140,224,255,1)",
+      pointStrokeColor: "#fff",
+      pointHighlightFill: "#fff",
+      pointHighlightStroke: "rgba(151,187,205,1)",
+      bezierCurve : true,
+      data : [
+  {% for alcohol_val in alcohol_vals %}
+          {{ alcohol_val }},
+        {% endfor %}]
+      }
+    ]
+  }
+  var mychart = document.getElementById("chart3").getContext("2d");
+  steps = 1
+  max = 1
+  // draw bar chart
+  var LineChartDemo = new Chart(mychart).Line(barData, {
+    scaleOverride: true,
+    scaleSteps: steps,
+    scaleStepWidth: Math.ceil(max / steps),
+    scaleStartValue: 0,
+    scaleShowVerticalLines: true,
+    scaleShowGridLines : true,
+    barShowStroke : true,
+    scaleShowLabels: true,
+    bezierCurve: false,
+  });
+</script>
+    <a href="/"> Go Home </a>
+  </center>
+</body>
+</html>
