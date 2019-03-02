@@ -8,7 +8,7 @@ def getOutput(my_url_list):
     output_list = []
     for my_url in my_url_list:
         output_list.append(client.check('wad').set_url(my_url))
-    return output_list
+    return [output_list[0], output_list[1], output_list[2]]
 
 def checkDrugs(my_url_list):
     my_drug_list = []
