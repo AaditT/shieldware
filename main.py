@@ -11,7 +11,7 @@ def graph():
 
 
 @app.route('/tw_graph', methods=['GET', 'POST'])
-def log():
+def tw_graph():
     if request.method == 'POST':
         username = str(request.form['username-tw'])
         all_tweets = twitterdata.get_all_tweets(username)
@@ -32,10 +32,11 @@ def log():
         )
 
 @app.route('/ig_graph', methods=['GET', 'POST'])
-def log():
+def ig_graph():
     if request.method == 'POST':
         username = str(request.form['username-ig'])
         all_posts = instagramdata.get_all_igposts(username)
+        print(all_posts)
         print("Getting drug vals...")
         drug_vals = engine.checkDrugs(all_posts)
         print("Getting weapon vals...")
