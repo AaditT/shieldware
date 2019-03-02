@@ -6,7 +6,7 @@ import requests
 def some_action(post):
     print(post["picture"])
 
-access_token = "9c0d82270c8693d327a0a0dde722fcd5"
+access_token = "304960536800372|kgJbyeAqX35UzTZBFRTzN9UO1NY"
 user = "BillGates"
 
 graph = facebook.GraphAPI(access_token)
