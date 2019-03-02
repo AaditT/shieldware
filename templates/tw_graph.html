@@ -7,6 +7,10 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js'></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <style>
+    html {
+        background-image: url(/static/tw_background.jpg);
+        background-size: cover;
+    }
     h1 {
       font: 50px arial, sans-serif;
     };
@@ -22,7 +26,8 @@
   <center>
       <img src="/static/twitter.jpg"></img>
     <h1>{{name}}</h1>
-    <canvas id="chart" width="200" height="200"></canvas>
+    <h2> DRUGS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  WEAPONS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ALCOHOL </h2>
+    <canvas id="chart" width="500" height="500"></canvas>
     <script>
       // bar chart data
       var barData = {
@@ -63,7 +68,7 @@
       });
     </script>
 
-<canvas id="chart2" width="200" height="200"></canvas>
+<canvas id="chart2" width="500" height="500"></canvas>
 <script>
   // bar chart data
   var barData = {
@@ -104,7 +109,7 @@
   });
 </script>
 
-<canvas id="chart3" width="200" height="200"></canvas>
+<canvas id="chart3" width="500" height="500"></canvas>
 <script>
   // bar chart data
   var barData = {
