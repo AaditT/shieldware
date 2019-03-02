@@ -24,10 +24,12 @@ def get_all_tweets(screen_name):
 
     for tweet in alltweets:
         try:
-            print (tweet.entities['media'][0]['media_url'])
+            print(tweet.entities['media'][0]['media_url'])
         except (NameError, KeyError):
             pass
         else:
             outtweets.append(str(tweet.entities['media'][0]['media_url']))
-
+    outtweets = outtweets[:5]
+    print(outtweets)
     return outtweets
+
