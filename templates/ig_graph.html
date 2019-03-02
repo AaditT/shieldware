@@ -58,7 +58,7 @@
             // draw bar chart
             var LineChartDemo = new Chart(mychart).Line(barData, {
               scaleOverride: true,
-              scaleSteps: 0,
+              scaleSteps: steps,
               scaleStepWidth: Math.ceil(max / steps),
               scaleStartValue: 0,
               scaleShowVerticalLines: true,
