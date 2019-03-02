@@ -48,11 +48,11 @@
       }
       var mychart = document.getElementById("chart").getContext("2d");
       steps = 1
-      max = 1
+      max = 0.25
       // draw bar chart
       var LineChartDemo = new Chart(mychart).Line(barData, {
         scaleOverride: true,
-        scaleSteps: steps,
+        scaleSteps:  ,
         scaleStepWidth: Math.ceil(max / steps),
         scaleStartValue: 0,
         scaleShowVerticalLines: true,
@@ -89,7 +89,7 @@
   }
   var mychart = document.getElementById("chart2").getContext("2d");
   steps = 1
-  max = 1
+  max = 0.25
   // draw bar chart
   var LineChartDemo = new Chart(mychart).Line(barData, {
     scaleOverride: true,
@@ -130,7 +130,7 @@
   }
   var mychart = document.getElementById("chart3").getContext("2d");
   steps = 1
-  max = 1
+  max = 0.25
   // draw bar chart
   var LineChartDemo = new Chart(mychart).Line(barData, {
     scaleOverride: true,
