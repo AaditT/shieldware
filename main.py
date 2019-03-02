@@ -2,8 +2,12 @@ from flask import *
 import twitterdata
 import instagramdata
 import engine
+import instaloader
 
 app = Flask(__name__)
+
+loader = instaloader.Instaloader()
+
 
 @app.route('/')
 def graph():
@@ -36,7 +40,9 @@ def tw_graph():
 def ig_graph():
     if request.method == 'POST':
         username = str(request.form['username-ig'])
-        all_posts = instagramdata.get_all_igposts(username)
+        profile = instaloader.Profile.from_username(loader.context, username)
+        print(str(profile.userid))
+        all_posts = instagramdata.get_all_igposts(str(profile.userid))
         all_output = engine.getOutput(all_posts)
         print(all_posts)
         print("Getting drug vals...")
