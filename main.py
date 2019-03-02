@@ -52,7 +52,7 @@ def ig_graph():
             drug_vals = drug_vals,
             weapon_vals = weapon_vals,
             alcohol_vals = alcohol_vals,
-            x_vals = x_vals
+            x_vals = x_vals,
         )
 
 
