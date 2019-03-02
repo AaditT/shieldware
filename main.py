@@ -15,12 +15,13 @@ def tw_graph():
     if request.method == 'POST':
         username = str(request.form['username-tw'])
         all_tweets = twitterdata.get_all_tweets(username)
+        tweets_output = engine.getOutput(all_tweets)
         print("Getting drug vals...")
-        drug_vals = engine.checkDrugs(all_tweets)
+        drug_vals = engine.checkDrugs(tweets_output)
         print("Getting weapon vals...")
-        weapon_vals = engine.checkWeapons(all_tweets)
+        weapon_vals = engine.checkWeapons(tweets_output)
         print("Getting alcohol vals...")
-        alcohol_vals = engine.checkAlcohol(all_tweets)
+        alcohol_vals = engine.checkAlcohol(tweets_output)
         x_vals = engine.gen_list(int(len(all_tweets)) + 1)
         return render_template(
             'tw_graph.html',
