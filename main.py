@@ -37,13 +37,14 @@ def ig_graph():
     if request.method == 'POST':
         username = str(request.form['username-ig'])
         all_posts = instagramdata.get_all_igposts(username)
+        all_output = engine.getOutput(all_posts)
         print(all_posts)
         print("Getting drug vals...")
-        drug_vals = engine.checkDrugs(all_posts)
+        drug_vals = engine.checkDrugs(all_output)
         print("Getting weapon vals...")
-        weapon_vals = engine.checkWeapons(all_posts)
+        weapon_vals = engine.checkWeapons(all_output)
         print("Getting alcohol vals...")
-        alcohol_vals = engine.checkAlcohol(all_posts)
+        alcohol_vals = engine.checkAlcohol(all_output)
         x_vals = engine.gen_list(int(len(all_posts)) + 1)
         return render_template(
             'ig_graph.html',

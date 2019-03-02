@@ -29,7 +29,7 @@ def get_all_tweets(screen_name):
             pass
         else:
             outtweets.append(str(tweet.entities['media'][0]['media_url']))
-    outtweets = outtweets[:5]
+    outtweets = outtweets[:6]
     print(outtweets)
     return outtweets
 

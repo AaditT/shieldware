@@ -14,6 +14,7 @@ def getOutput(my_url_list):
 def checkDrugs(output_list):
     my_drug_list = []
     for output in output_list:
+        print(output)
         drugs = output['drugs']
         my_drug_list.append(drugs)
     return my_drug_list

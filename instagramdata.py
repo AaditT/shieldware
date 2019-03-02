@@ -10,5 +10,5 @@ def get_all_igposts(id):
     for post in user_feed_info:
         _url = post['node']['display_url']
     posts.append(_url)
-    posts = posts[:5]
+    posts = posts[:6]
     return posts
