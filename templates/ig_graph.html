@@ -52,9 +52,12 @@
                 }
               ]
             }
+          var data = [{% for weapon_val in weapon_vals %}
+              {{ weapon_val }},
+              {% endfor %}]
             var mychart = document.getElementById("chart").getContext("2d");
             steps = 1
-            max = {{(4/3) * max(drug_vals)}}
+            max = 1
             // draw bar chart
             var LineChartDemo = new Chart(mychart).Line(barData, {
               scaleOverride: true,
@@ -104,15 +107,19 @@
                 pointHighlightStroke: "rgba(151,187,205,1)",
                 bezierCurve : true,
                 data : [
-            {% for weapon_val in weapon_vals %}
-                    {{ weapon_val }},
-                  {% endfor %}]
-                }
+                        {% for weapon_val in weapon_vals %}
+                            {{ weapon_val }},
+                        {% endfor %}]
+              }
               ]
             }
+            var data = [{% for weapon_val in weapon_vals %}
+              {{ weapon_val }},
+              {% endfor %}]
+
             var mychart = document.getElementById("chart2").getContext("2d");
             steps = 1
-            max = {{(4/3) * max(weapon_vals)}}
+            max = 1
             // draw bar chart
             var LineChartDemo = new Chart(mychart).Line(barData, {
               scaleOverride: true,
@@ -177,9 +184,12 @@
                 }
               ]
             }
+          var data = [{% for weapon_val in weapon_vals %}
+              {{ weapon_val }},
+              {% endfor %}]
             var mychart = document.getElementById("chart3").getContext("2d");
             steps = 1
-            max = {{(4/3) * max(alcohol_vals)}}
+            max = 1
             // draw bar chart
             var LineChartDemo = new Chart(mychart).Line(barData, {
               scaleOverride: true,
