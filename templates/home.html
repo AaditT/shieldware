@@ -18,66 +18,36 @@
         background-color: teal;
         opacity: 0.8;
     };
-    .fa {
-      padding: 20px;
-      font-size: 30px;
-      width: 30px;
-      text-align: center;
-      text-decoration: none;
-      border-radius: 50%;
-    }
-    .fa:hover {
-      opacity: 0.7;
-    }
-    .fa:hover {
-      opacity: 0.7;
-    }
-
-    /* Set a specific color for each brand */
-
-    /* Facebook */
-    .fa-instagram {
-      background: #ea4c89;
-      color: white;
-    }
-
-    /* Twitter */
-    .fa-twitter {
-      background: #55ACEE;
-      color: white;
-    }
     p {
       color: white;
+      font: 20px sans-serif;
+
+    }
+    h3 {
       font-size: 15px;
+      color: white;
     }
   </style>
   <body>
         <h1> <center><img src="/static/logo.jpg" width="300" height="300"></center></img> </h1>
         <h2> Stay informed. Stay connected. Stay safe. </h2>
-    <!-- Add font awesome icons -->
-    <a href="https://twitter.com" class="fa fa-twitter"></a>
-    <a href="https://www.instagram.com" class="fa fa-instagram"></a>
-    <div>
-        <strong>What is ShieldWare? </strong><br>
-        <p>
+    <form action="/tw_graph" method="post">
+      <p><strong>Twitter Username:</strong></p>
+        <input id="username-tw" name="username-tw">
+        <input name="submit" type="submit" value="Search">
+    </form>
+    <br>
+    <form action="/ig_graph" method="post">
+      <p><strong>Instagram Username:</strong></p>
+        <input id="username-ig" name="username-ig">
+        <input name="submit" type="submit" value="Search">
+    </form>
+    <h3>
+    <strong>What is ShieldWare? </strong><br>
         ShieldWare is security web app that can make your school or office safer.
         ShieldWare uses advanced machine-learning APIs to detect and monitor the levels of violent, drug-related, or alcohol-related content posted by a given social media user. <Br>
         In this way, ShieldWare makes YOU aware of the condition of a student or employee, thus enabling you to avert any dangerous incidents -- and get them help as soon as possible. <br>
         Use ShieldWare today -- and secure your environment.
-      </p>
-    </div>
-    <form action="/tw_graph" method="post">
-      <p> Twitter Username:
-        <input id="username-tw" name="username-tw">
-        <input name="submit" type="submit" value="Search">
-      </p>
-    </form>
-    <form action="/ig_graph" method="post">
-      <p> Instagram Username:
-        <input id="username-ig" name="username-ig">
-        <input name="submit" type="submit" value="Search">
-      </p>
-    </form>
-
+    <h3>
   </body>
 </html>
