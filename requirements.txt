@@ -1,0 +1,13 @@
+Flask==1.0.2
+
+Jinja2==2.10
+
+python-twitter==3.5
+
+sightengine==1.4.0
+
+tweepy==3.7.0
+
+Werkzeug==0.14.1
+
+gunicorn==19.9.0
