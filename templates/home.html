@@ -47,10 +47,26 @@
       background: #55ACEE;
       color: white;
     }
+    .bg-image {
+      /* The image used */
+      background-image: url("/static/background.jpg");
+
+      /* Add the blur effect */
+      filter: blur(8px);
+      -webkit-filter: blur(8px);
+
+      /* Full height */
+      height: 100%;
+
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
   </style>
   <body>
     <center>
-        <h1> <img src="/static/logo.png" width="300" height="300"></img> </h1>
+      <div class="bg-image"></div>
         <h2> Stay informed. Stay connected. Stay safe. </h2>
     </center>
     <!-- Add font awesome icons -->
