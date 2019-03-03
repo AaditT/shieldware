@@ -2,7 +2,7 @@
 ### https://devpost.com/software/shieldware
 ### by Aadit Trivedi & Srihari Nanniyur
 
-# Installation / Get Started
+# Installation 🛠 && Get Started 🔑
 1) Install shieldware ``$ git clone https://github.com/AaditT/shieldware``
 2) Install dependencies
     - Make sure python3 and git are installed on your system
