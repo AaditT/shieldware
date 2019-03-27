@@ -1,4 +1,4 @@
-# ShieldWare -- 2nd Place Winner at PioneerHacksII
+# ShieldWare -- 1st Place Winner at PioneerHacksII
 ### https://devpost.com/software/shieldware
 ### by Aadit Trivedi & Srihari Nanniyur
 
