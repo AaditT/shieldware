@@ -27,10 +27,23 @@
       font-size: 15px;
       color: white;
     }
+    .image-example {
+      width: 30vw;
+      min-width: 100px;
+      text-align: center;
+      height: 300px;
+      margin: 5% auto;
+      background-color: #ccc;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      text-align: left;
+      padding-left: 20px;
+  }
   </style>
   <body>
         <h1> <center><img src="/static/logo.jpg" width="300" height="300"></center></img> </h1>
-        <h2> Stay informed. Stay connected. Stay safe. </h2>
+        <center><h2> Stay informed. Stay connected. Stay safe. </h2></center>
+        <div class="image-example">
     <form action="/tw_graph" method="post">
       <p><strong>Twitter Username:</strong></p>
         <input id="username-tw" name="username-tw">
@@ -42,6 +55,7 @@
         <input id="username-ig" name="username-ig">
         <input name="submit" type="submit" value="Search">
     </form>
+  </div>
     <h3>
     <strong>What is ShieldWare? </strong><br>
         ShieldWare is security web app that can make your school or office safer.
