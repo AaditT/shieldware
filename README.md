@@ -5,6 +5,7 @@
 # TODO
 1. make chart values clickable and redirect to user's post
 2. spreadsheet integration
+3. facebook integration
 
 # Installation 🛠 And Getting Started 🔑
 1) Install shieldware ``$ git clone https://github.com/AaditT/shieldware``
