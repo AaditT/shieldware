@@ -2,12 +2,6 @@
 ### https://devpost.com/software/shieldware
 ### by Aadit Trivedi & Srihari Nanniyur
 
-# TODO
-1. make chart values clickable and redirect to user's post
-2. spreadsheet integration
-3. facebook integration
-4. generate unique api keys for each client
-
 # Installation 🛠 And Getting Started 🔑
 1) Install shieldware ``$ git clone https://github.com/AaditT/shieldware``
 2) Install dependencies
